@@ -26,6 +26,11 @@ function AdminSideBar() {
       icon: <FaUserGroup size={24} color="white" />,
       route: "/admin/student",
     },
+    // {
+    //   name: "Teacher List",
+    //   icon: <FaUserGroup size={24} color="white" />,
+    //   route: "/admin/teacher",
+    // },
 
     {
       name: "Announcements",
