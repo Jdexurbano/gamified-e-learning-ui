@@ -27,25 +27,21 @@ function App() {
             element={<AdminAnnouncementPage />}
           />
         </Route>
-        // {/* student routes */}
-        //{" "}
+        {/* student routes */}
+
         <Route element={<StudentLoginLayout />}>
-          // <Route path="/" element={<StudentLoginPage />} />
-          // <Route path="/about" element={<AboutPage />} />
-          //{" "}
+          <Route path="/" element={<StudentLoginPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Route>
-        //{" "}
+
         <Route element={<StudentMainLayout />}>
-          // <Route path="/home" element={<HomePage />} />
-          // <Route path="/announcement" element={<AnnouncementPage />} />
-          // <Route path="/history" element={<ActivityHistoryPage />} />
-          //{" "}
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/announcement" element={<AnnouncementPage />} />
+          <Route path="/history" element={<ActivityHistoryPage />} />
         </Route>
-        // {/* game routes */}
-        // <Route path="/count-the-fruits" element={<CountTheFruitGame />} />
-        //{" "}
+        {/* game routes */}
+        <Route path="/count-the-fruits" element={<CountTheFruitGame />} />
       </Routes>
-      //{" "}
     </>
   );
 }
