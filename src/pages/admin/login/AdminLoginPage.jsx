@@ -45,29 +45,30 @@ function AdminLogin() {
       <main className="w-full h-screen grid grid-cols-[2fr_2fr]">
         {/* left column */}
         <div className="bg-purple-200/10">
-          <div className="flex flex-col justify-center items-center gap-2 mt-20">
-            <img src="./images/logo.png" alt="" className="w-40 h-40" />
+          <div className="flex flex-col justify-center items-center gap-2 mt-10">
+            <img src="./images/logo.png" alt="" className="w-24 h-24" />
             <div className="text-center text-gray-800">
-              <h3 className="font-bold text-2xl">
+              <h3 className="font-bold text-lg">
                 Malasiqui Adventist School, Inc.
               </h3>
               <p className="font-medium text-1xl">Malasiqui, Pangasinan</p>
             </div>
           </div>
-          <div className="flex justify-center items-center flex-col gap-4 mt-36">
-            <h1 className="font-bold text-6xl text-gray-900">
+          <div className="flex justify-center items-center flex-col gap-4 mt-20">
+            <h1 className="font-bold text-5xl text-gray-900">
               Welcome to <span className="text-purple-700">Creative</span>
             </h1>
-            <h1 className="font-bold text-6xl text-gray-900">Learning!</h1>
+            <h1 className="font-bold text-5xl text-gray-900">Learning!</h1>
           </div>
         </div>
 
-
         {/* right column */}
         <div className="bg-purple-700 flex flex-col items-center">
-          <div className="w-[69vh] flex flex-col justify-center items-center gap-4 bg-gray-50 mt-80 px-5 pt-8 pb-10 rounded-md shadow-2xl">
-            <div className="self-start text-left ml-7">
-              <h1 className="font-semibold text-2xl text-purple-400">Welcome Back!</h1>
+          <div className="w-[69vh] flex flex-col justify-center items-center gap-4 bg-gray-50 mt-28 px-5 pt-8 pb-10 rounded-md shadow-2xl">
+            <div className="self-start text-left ml-3">
+              <h1 className="font-semibold text-2xl text-purple-400">
+                Welcome Back!
+              </h1>
               <p className="text-gray-700 mt-2">Log In As Admin</p>
             </div>
             <form
@@ -98,7 +99,7 @@ function AdminLogin() {
 
               <Button
                 loading={loading}
-                className="w-[60vh] flex justify-center items-center mt-7"
+                className="w-[60vh] flex justify-center items-center mt-4"
                 color="purple"
                 variant="gradient"
                 type="submit"
