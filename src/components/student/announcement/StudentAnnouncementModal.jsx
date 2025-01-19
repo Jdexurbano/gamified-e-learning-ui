@@ -8,7 +8,7 @@ import {
   Textarea,
 } from "@material-tailwind/react";
 
-function StudentAnnouncementModal({ open, handleOpen, titlesAndDescriptions }) {
+function StudentAnnouncementModal({ open, handleOpen, title, description }) {
   return (
     <>
       <Dialog open={open} handler={handleOpen}>
@@ -25,7 +25,8 @@ function StudentAnnouncementModal({ open, handleOpen, titlesAndDescriptions }) {
               <Input
                 label="Title"
                 color="purple"
-                value={titlesAndDescriptions.title}
+                value={title}
+                readOnly
                 // onChange={(e) => setTitle(e.target.value)}
               ></Input>
             </div>
@@ -34,7 +35,8 @@ function StudentAnnouncementModal({ open, handleOpen, titlesAndDescriptions }) {
               <Textarea
                 label="Description"
                 color="purple"
-                value={titlesAndDescriptions.description}
+                readOnly
+                value={description}
                 // onChange={(e) => setDescription(e.target.value)}
               ></Textarea>
             </div>

@@ -6,14 +6,15 @@ import { PORT } from "../../../utils/constant";
 import StudentAnnouncementModal from "../../../components/student/announcement/StudentAnnouncementModal";
 function AnnouncementPage() {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(!open);
+  const handleOpen = (data) => {
+    setTitle(data.title);
+    setDescription(data.description);
+    setOpen(!open);
+  };
   const [announcements, setAnnouncements] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const TABLE_HEAD = ["Title", "Description", "Date"];
-
-  const titlesAndDescriptions = announcements.map((item) => ({
-    title: item.title,
-    description: item.description,
-  }));
 
   const getAnnouncements = async () => {
     try {
@@ -53,48 +54,51 @@ function AnnouncementPage() {
             </tr>
           </thead>
           <tbody>
-            {announcements.map((data, index) => (
-              <tr
-                onClick={handleOpen}
-                key={index}
-                className="even:bg-blue-gray-50/50 even:border-2 hover:bg-purple-50 text-center"
-              >
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {data.title}
-                  </Typography>
-                </td>
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {data.description}
-                  </Typography>
-                </td>
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {convertISODate(data.created_at)}
-                  </Typography>
-                </td>
-              </tr>
-            ))}
+            {announcements.map((data, index) => {
+              return (
+                <tr
+                  onClick={() => handleOpen(data)}
+                  key={index}
+                  className="even:bg-blue-gray-50/50 even:border-2 hover:bg-purple-50 text-center cursor-pointer"
+                >
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {data.title}
+                    </Typography>
+                  </td>
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {data.description}
+                    </Typography>
+                  </td>
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {convertISODate(data.created_at)}
+                    </Typography>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </Card>
       <StudentAnnouncementModal
         open={open}
         handleOpen={handleOpen}
-        titlesAndDescriptions={titlesAndDescriptions}
+        title={title}
+        description={description}
       />
     </main>
   );
