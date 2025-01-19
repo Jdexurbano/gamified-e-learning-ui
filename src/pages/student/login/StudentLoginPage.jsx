@@ -44,11 +44,16 @@ function StudentLoginPage() {
 
   return (
     <>
-      <div className="w-[75vh] flex flex-col justify-center items-center gap-4 bg-gray-50 mt-14 px-5 pt-8 pb-12 rounded-lg">
-        <h1 className="font-semibold text-3xl text-purple-400">Student</h1>
+      <div className="w-[69vh] flex flex-col justify-center items-center gap-4 bg-gray-50 mt-14 px-5 pt-8 pb-10 rounded-md shadow-2xl">
+        <div className="self-start text-left ml-3">
+          <h1 className="font-semibold text-2xl text-purple-400">
+            Welcome Back!
+          </h1>
+          <p className="text-gray-700 mt-2">Log In As Student</p>
+        </div>
         <form
           onSubmit={handleLogin}
-          className="w-[60vh] flex flex-col items-center gap-2"
+          className="w-[60vh] flex flex-col items-center gap-3 mt-2"
         >
           <div className="w-[60vh] ">
             <Input
@@ -74,7 +79,7 @@ function StudentLoginPage() {
 
           <Button
             loading={loading}
-            className="w-[60vh] flex justify-center items-center"
+            className="w-[60vh] flex justify-center items-center mt-4"
             color="purple"
             variant="gradient"
             type="submit"
@@ -84,9 +89,9 @@ function StudentLoginPage() {
         </form>
         <p
           onClick={handleNavigateToAdmin}
-          className="cursor-pointer font-medium text-purple-300 underline"
+          className="cursor-pointer font-medium text-purple-300"
         >
-          Admin
+          Log in as a Admin
         </p>
       </div>
 
